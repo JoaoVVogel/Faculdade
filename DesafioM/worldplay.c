@@ -57,34 +57,30 @@ int main(){
                         repet2 = 1;
                         certas++;
 
-                    }else{
-                        if(tent1 < 2){
+                    }else if(tent1 < 2){
                             printf("Resposta errada!\n");
                             tent1++;
                             repet2 = 0;
 
-                        }else if (tent1 == 2){
+                       }if (tent1 == 2){
                             printf("Chances esgotadas para esta pergunta!\n");
                             repet = 1;
                             repet2 = 1;
 
                         }
-                        
-                    }
-                
+
                 }else{
                     printf("Pergunta ja feita, escolha outra...\n");
-                    repet = 1;
                     repet2 = 1;
 
                 }
                 break;
             
                     case 2:
-                printf("Voce selecionou a segunda pergunta, qual sua tentativa?\n");
-                gets(tentativa);
-                fflush(stdin);
-                if(tent2 <= 2){
+                    if(tent2 != 2){
+                    printf("Voce selecionou a segunda pergunta, qual sua tentativa?\n");
+                    gets(tentativa);
+                    fflush(stdin);
                     if(!strcmp(resposta[1], tentativa)){
                         printf("Certa resposta!\n");
                         matr[1][2] = 's';
@@ -95,74 +91,66 @@ int main(){
                         matr[1][22] = 'a';
                         matr[1][26] = 'r';
                         matr[1][30] = 'e';
-                        repet = 2;
+                        repet++;
                         certas++;
                         repet2 = 1;
 
 
-                    }else{
-                        if(tent2 < 2){
+                    }else if(tent2 < 2){
                             printf("Resposta errada!\n");
                             tent2++;
                             repet2 = 0;
-
-                        }else if (tent2 == 2){
+                    }
+                        if (tent2 == 2){
                             printf("Chances esgotadas para esta pergunta!\n");
-                            repet = 2;
+                            repet++;
                             repet2 = 1;
                         }
                         
-                    }
-                
-                }else{
+                    }else{
                     printf("Pergunta ja feita, escolha outra...\n");
-                    repet = 2;
                     repet2 = 1;
 
                 }
                 break;
 
                     case 3:
-                printf("Voce selecionou a terceira pergunta, qual sua tentativa?\n");
-                gets(tentativa);
-                fflush(stdin);
-                if(tent3 <= 2){
+                    if(tent3 != 2){
+                    printf("Voce selecionou a terceira pergunta, qual sua tentativa?\n");
+                    gets(tentativa);
+                    fflush(stdin);
                     if(!strcmp(resposta[2], tentativa)){
                         printf("Certa resposta!\n");
                         matr[2][2] = 'b';
                         matr[2][6] = 'y';
                         matr[2][10] = 't';
                         matr[2][14] = 'e';
-                        repet = 2;
+                        repet++;
                         certas++;
                         repet2 = 1;
 
-                    }else{
-                        if(tent3 < 2){
+                    }else if(tent3 < 2){
                             printf("Resposta errada!\n");
                             tent3++;
                             repet2 = 0;
-
-                        }else if (tent3 == 2){
+                    }
+                        if (tent3 == 2){
                             printf("Chances esgotadas para esta pergunta!\n");
-                            repet = 2;
                             repet2 = 1;
                         }
-                        
-                    }
                 
                 }else{
                     printf("Pergunta ja feita, escolha outra...\n");
-                    repet = 2;
+                    repet2 = 1;
 
                 }
                 break;   
 
                     case 4:
-                printf("Voce selecionou a segunda pergunta, qual sua tentativa?\n");
-                gets(tentativa);
-                fflush(stdin);
-                if(tent4 <= 2){
+                    if(tent4 != 2){
+                    printf("Voce selecionou a segunda pergunta, qual sua tentativa?\n");
+                    gets(tentativa);
+                    fflush(stdin);
                     if(!strcmp(resposta[3], tentativa)){
                         printf("Certa resposta!\n");
                         matr[3][2] = 'c';
@@ -175,36 +163,35 @@ int main(){
                         matr[3][30] = 'd';
                         matr[3][34] = 'o';
                         matr[3][38] = 'r';
-                        repet = 2;
+                        repet++;
                         repet2 = 1;
                         certas++;
 
-                    }else{
-                        if(tent4 < 2){
+                    }else if(tent4 < 2){
                             printf("Resposta errada!\n");
                             tent4++;
                             repet2 = 0;
 
-                        }else if (tent4 == 2){
-                            printf("Chances esgotadas para esta pergunta!\n");
-                            repet = 2;
-                            repet2 = 1;
                         }
+                        if (tent4 == 2){
+                            printf("Chances esgotadas para esta pergunta!\n");
+                            repet++;
+                            repet2 = 1;
                         
                     }
                 
                 }else{
                     printf("Pergunta ja feita, escolha outra...\n");
-                    repet = 2;
+                    repet2 = 1;
 
                 }
                 break;
             
                     case 5:
-                printf("Voce selecionou a quinta pergunta, qual sua tentativa?\n");
-                gets(tentativa);
-                fflush(stdin);
-                if(tent5 <= 2){
+                    if(tent5 != 2){
+                    printf("Voce selecionou a quinta pergunta, qual sua tentativa?\n");
+                    gets(tentativa);
+                    fflush(stdin);
                     if(!strcmp(resposta[4], tentativa)){
                         printf("Certa resposta!\n");
                         matr[4][2] = 'c';
@@ -213,29 +200,27 @@ int main(){
                         matr[4][14] = 'i';
                         matr[4][18] = 'g';
                         matr[4][22] = 'o';
-                        repet = 2;
+                        repet++;
                         repet2 = 1;
                         certas++;
 
-                    }else{
-                        if(tent5 < 2){
+                    }else if (tent5 < 2){
                             printf("Resposta errada!\n");
                             tent5++;
                             repet2 = 0;
 
-                        }else if (tent5 == 2){
+                        }
+                        if (tent5 == 2){
                             printf("Chances esgotadas para esta pergunta!\n");
-                            repet = 2;
+                            repet++;
                             repet2 = 1;
                         }
-                        
+
+                    }else{
+                    printf("Pergunta ja feita, escolha outra...\n");
+                    repet2 = 1;
                     }
                 
-                }else{
-                    printf("Pergunta ja feita, escolha outra...\n");
-                    repet = 2;
-
-                }
                 break;
 
                 default:
@@ -257,10 +242,10 @@ int main(){
             
         }
 
-        printf("Correção: \n");
+        printf("Correcao: \n");
         
         for ( i = 0; i < 5; i++){
-            printf("%s", gabarito[i]);
+            printf("%s/n/n", gabarito[i]);
         }
         printf("Obrigado por jogar!!");
         system("pause");
