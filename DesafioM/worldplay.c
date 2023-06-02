@@ -33,14 +33,15 @@ int main(){
         printf("5 - Ele compoe tudo relacionado a software\n");
         printf("Escolha qual quer responder: \n");
         scanf("%i", &pergunta);
+        fflush(stdin);
         do{
             switch (pergunta){
 
             case 1:
+                if(tent1 != 2){
                 printf("Voce selecionou a primeira pergunta, qual sua tentativa?\n");
                 gets(tentativa);
                 fflush(stdin);
-                if(tent1 != 2){
                     if (!strcmp(resposta[0], tentativa)){
                         printf("Certa resposta!\n");
                         matr[0][2] = 'h';
@@ -51,6 +52,7 @@ int main(){
                         matr[0][22] = 'a';
                         matr[0][26] = 'r';
                         matr[0][30] = 'e';
+                        tent1 = 2;
                         repet = 1;
                         repet2 = 1;
                         certas++;
@@ -199,20 +201,18 @@ int main(){
                 break;
             
                     case 5:
-                printf("Voce selecionou a segunda pergunta, qual sua tentativa?\n");
+                printf("Voce selecionou a quinta pergunta, qual sua tentativa?\n");
                 gets(tentativa);
                 fflush(stdin);
                 if(tent5 <= 2){
                     if(!strcmp(resposta[4], tentativa)){
                         printf("Certa resposta!\n");
-                        matr[0][2] = 's';
-                        matr[0][6] = 'o';
-                        matr[0][10] = 'f';
-                        matr[0][14] = 't';
-                        matr[0][18] = 'w';
-                        matr[0][22] = 'a';
-                        matr[0][26] = 'r';
-                        matr[0][30] = 'e';
+                        matr[4][2] = 'c';
+                        matr[4][6] = 'o';
+                        matr[4][10] = 'd';
+                        matr[4][14] = 'i';
+                        matr[4][18] = 'g';
+                        matr[4][22] = 'o';
                         repet = 2;
                         repet2 = 1;
                         certas++;
@@ -246,7 +246,7 @@ int main(){
             }
 
         }while(repet2 != 1);    
-    }while (repet <= 5);
+    }while (repet != 5);
         printf("Voce acertou %i perguntas!\n", certas);
         for ( i = 0; i < 5; i++){
             printf("%s\n", matr[i]);
