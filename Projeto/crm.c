@@ -80,7 +80,7 @@ int main(){
 
    }
 
-    int idb, i, linha;
+    int idb, i, linha, very = 0;
 
     char assentos[9][26] = { "| 00 | 01 |   | 02 | 03 |",
                              "| 10 | 11 |   | 12 | 13 |",
@@ -123,35 +123,37 @@ int main(){
         }
         for (i = 0; i < 20; i++){
             if(idb == voo[i].id){
-                fprintf(*passagem, "----------------------------------------\n");
-                fprintf(*passagem, "|         FLYPIG INTERNATIONAL         |\n");
-                fprintf(*passagem, "----------------------------------------\n\n");
-                fprintf(*passagem, "----------------------------------------\n");
-                fprintf(*passagem, "NOME: %c\n", nome);
-                fprintf(*passagem, "IDADE: %i\n", idade);
-                fprintf(*passagem, "----------------------------------------\n\n");
-                fprintf(*passagem, "-------------------\n");
-                fprintf(*passagem, "id: %i\n", voo[ide].id);
-                fprintf(*passagem, "Partida: %s\n", voo[ide].partida);
-                fprintf(*passagem, "Destino: %s\n", voo[ide].destino);
-                fprintf(*passagem, "Horario: %s\n", voo[ide].hora);
-                fprintf(*passagem, "Valor: %.2f\n", voo[ide].valor);
-                fprintf(*passagem, "-------------------\n\n");
-                fprintf(*passagem, "----------------------------------------\n");
-                fprintf(*passagem, "|           MAPA DE POLTRONAS          |\n");
-                fprintf(*passagem, "----------------------------------------\n\n");
+                fprintf(passagem, "----------------------------------------\n");
+                fprintf(passagem, "|         FLYPIG INTERNATIONAL         |\n");
+                fprintf(passagem, "----------------------------------------\n\n");
+                fprintf(passagem, "----------------------------------------\n");
+                fprintf(passagem, "NOME: %c\n", nome);
+                fprintf(passagem, "IDADE: %i\n", idade);
+                fprintf(passagem, "----------------------------------------\n\n");
+                fprintf(passagem, "-------------------\n");
+                fprintf(passagem, "id: %i\n", voo[i].id);
+                fprintf(passagem, "Partida: %s\n", voo[i].partida);
+                fprintf(passagem, "Destino: %s\n", voo[i].destino);
+                fprintf(passagem, "Horario: %s\n", voo[i].hora);
+                fprintf(passagem, "Valor: %.2f\n", voo[i].valor);
+                fprintf(passagem, "-------------------\n\n");
+                fprintf(passagem, "----------------------------------------\n");
+                fprintf(passagem, "|           MAPA DE POLTRONAS          |\n");
+                fprintf(passagem, "----------------------------------------\n\n");
                 for(linha = 0; linha < 9; linha++){
-                    fprintf(*passagem, "%c\n\n", assentos[linha]);
+                    fprintf(passagem, "%c\n\n", assentos[linha]);
 
                 }
+                fclose(passagem);
                 flag = 1;
             }
         }
         if(flag != 1){
             printf("\nId invalido, tente novamente!\n");
-            return;
+            very = 1;
 
         }
 
-    }while
+    }while(very != 1);
+    
 }
