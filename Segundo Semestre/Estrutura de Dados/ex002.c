@@ -18,7 +18,7 @@ int potencia(int x, int y){
         resultado = 1;
 
     }else {
-        resultado = x * potencia(y - 1);
+        resultado = x * potencia(x, y - 1);
     
     }
     return resultado;
