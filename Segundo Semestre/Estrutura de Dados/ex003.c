@@ -1,35 +1,34 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
 
-int i, vet[i];
+#define TAMANHO_MAXIMO 100
 
-int main(){
-    int n, resultado, soma(int x);
-    printf("Digite um numero inteiro pro tamanho do vetor: ");
-    scanf("%i", &n);
-    for (i = 0; i < n; i++){
-        printf("Digite o valor %i do vetor: ", i);
-        scanf("%i", vet[i]);
+int soma(double vet[], int tamanho) {
+    if (tamanho == 0) {
+        return 0;
+    } else {
+        return vet[tamanho - 1] + soma(vet, tamanho - 1);
     }
-    
-    resultado = soma(vet[n]);
-    printf("O fatorial e %i", resultado);
-    return 0;
 }
-int soma(int x){
-    int resultado, j, k;
-    for (k = 0; k < vet[i]; k++){
-        for (j = 0; j < k; j++){
-            if(x == 0){
-            resultado = 1;
 
-            }else {
-            resultado = vet[k] + soma(x - vet[k]);
-        
-            }
-
-        }
-
+int main() {
+    int tamanho, i;
+    double vet[TAMANHO_MAXIMO];
+    
+    printf("Digite um numero inteiro pro tamanho do vetor: ");
+    scanf("%i", &tamanho);
+    
+    if (tamanho <= 0 || tamanho > TAMANHO_MAXIMO) {
+        printf("Tamanho do vetor inválido!\n");
+        return 1;
     }
-    return resultado;
+
+    for (i = 0; i < tamanho; i++) {
+        printf("Digite o valor %i do vetor: ", i + 1);
+        scanf("%lf", &vet[i]);
+    }
+
+    int resultado = soma(vet, tamanho);
+    printf("A soma destes valores e %i\n", resultado);
+
+    return 0;
 }
