@@ -31,10 +31,10 @@ int main(){
         }
 
      }
-     printf("Seu numero tem %i multiplos na funcao\n Deseja saber quais numeros sao?\n1 - Sim ou 2 - Nao", cont);
+     printf("Seu numero tem %i multiplos na funcao\n Deseja saber quais numeros sao?\n1 - Sim ou 2 - Nao\n", cont);
      scanf("%i", &escolha);
      if(escolha == 1){
-        printf("Multiplos de %i: ", x);
+        printf("Multiplos de %i sao: ", x);
         for(i = 0; i < j; i++){
             printf("%i ", multiplos[i]);
 
