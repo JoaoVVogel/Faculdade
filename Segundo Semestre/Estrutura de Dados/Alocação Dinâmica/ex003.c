@@ -6,10 +6,10 @@
 #include<string.h>
 
 int main(){
-    int n, *vet, *multiplos, x, cont = 0, i = 0, j = 0;
+    int n, escolha, *vet, *multiplos, x, cont = 0, i = 0, j = 0;
 
     printf("Digite um numero de posicoes pro vetor: ");
-    scanf("%i", n);
+    scanf("%i", &n);
 
     vet = malloc(n * sizeof(int));
     multiplos = malloc(n * sizeof(int));
@@ -23,12 +23,26 @@ int main(){
      scanf("%i", &x);
 
      for(i = 0; i < n; i++){
-        if(vet[i] % x = 0){
+        if(vet[i] % x == 0){
             multiplos[j] = vet[i];
+            j++;
             cont++;
 
         }
 
      }
+     printf("Seu numero tem %i multiplos na funcao\n Deseja saber quais numeros sao?\n1 - Sim ou 2 - Nao", cont);
+     scanf("%i", &escolha);
+     if(escolha == 1){
+        printf("Multiplos de %i: ", x);
+        for(i = 0; i < j; i++){
+            printf("%i ", multiplos[i]);
+
+        }
+    }else {
+        printf("Adeus...");
+        return 0;
+    }
+
 
 }
