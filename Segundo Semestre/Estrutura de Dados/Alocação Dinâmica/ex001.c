@@ -28,6 +28,7 @@ int main(){
     }
 
     printf("dos %i numeros que voce digitou %i sao pares e %i sao impares", n, pares, impares);
+    free(numeros);
     return 0;
 
 }

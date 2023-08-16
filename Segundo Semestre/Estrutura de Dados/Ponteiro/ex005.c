@@ -3,7 +3,9 @@
 //número primo que é menor do que m e deve retornar em p2 o menor número primo que é
 //maior do que m.
 #include<stdio.h>
+#include<stdlib.h>
 
 int main(){
+    
 
 }

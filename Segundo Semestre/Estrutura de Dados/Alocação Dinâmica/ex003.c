@@ -43,6 +43,7 @@ int main(){
         printf("Adeus...");
         return 0;
     }
-
+    free(multiplos);
+    free(vet);
 
 }
