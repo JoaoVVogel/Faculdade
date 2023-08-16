@@ -3,10 +3,11 @@
 var numeros = [10, 10, 10];
 
 function soma(numeros){
-    var soma = 0;
+    var total = 0;
     for(var i = 0; i < numeros.length; i++){
-        soma = soma + numeros.length[i];
+        total = total + numeros[i];
     }
+    return total;
 
 }
-console.log(soma);
+console.log(soma(numeros));
