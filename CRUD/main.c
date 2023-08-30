@@ -1,15 +1,27 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
-#include "filmes.h"
 #include "excluir.h"
 #include "cadastrar.h"
 #include "visualizar.h"
 #include "atualizar.h"
 
-int main(){
-    int op, menuLoop = 0;
-    do{
+struct filmes{
+    int id;
+    char nome[20];
+    int horario;
+
+};
+
+#define MAX_FILMES 10
+
+int main() {
+    struct filmes *filme = NULL;
+    int op, menuLoop = 0, numeroDeFilmes = 0;
+
+    filme = (struct filmes*)malloc(MAX_FILMES * sizeof(struct filmes));
+    do {
         printf("O que deseja realizar:\n");
         printf("1 - Cadastrar filme\n");
         printf("2 - Vizualizar filmes\n");
@@ -17,30 +29,37 @@ int main(){
         printf("4 - Excluir filme\n");
         printf("0 - Sair");
 
-        switch (op)
-        {
-        case 1:
-            cadastrar();
+        scanf("%d", &op);
+
+        switch (op) {
+            case 1:
+                cadastrar(filme, &numeroDeFilmes, MAX_FILMES);
+                break;
+
+            case 2:
+                vizualizar(filme, &numeroDeFilmes, MAX_FILMES);
+                break;
+
+            case 3:
+                atualizar(filme, &numeroDeFilmes, MAX_FILMES);
+                break;
+
+            case 4:
+                excluir(filme, &numeroDeFilmes, MAX_FILMES);
+                break;
             
-            break;
 
-        case 2:
-            vizualizar();
-            break;
+            case 0:
+                menuLoop = 1;
+                break;;
 
-        case 3:
-            atualizar();
-            break;
-
-        case 4:
-            excluir();
-            break;
-        
-        case 0:
-            return 0;
-        
-        default:
-            break;
+            default:
+                break;
         }
-    }while(menuLoop == 0);
+
+    } while (menuLoop == 0);
+    
+    printf("Encerrando...");
+    free(filme);
+    return 0;
 }
