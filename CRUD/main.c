@@ -27,7 +27,8 @@ int main() {
         printf("2 - Vizualizar filmes\n");
         printf("3 - Atualizar filme\n");
         printf("4 - Excluir filme\n");
-        printf("0 - Sair");
+        printf("5 - Emitir ingresso\n");
+        printf("0 - Sair\n");
 
         scanf("%d", &op);
 
@@ -47,7 +48,10 @@ int main() {
             case 4:
                 excluir(filme, &numeroDeFilmes, MAX_FILMES);
                 break;
-            
+
+            case 5:
+                ingresso(filme, &numeroDeFilmes, MAX_FILMES);
+                break;
 
             case 0:
                 menuLoop = 1;
