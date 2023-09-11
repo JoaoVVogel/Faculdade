@@ -14,7 +14,7 @@ lista* criarlistta(){
     if (inicio != NULL){
         *inicio = NULL;
     }else{
-        printf("Erro na alocaçãooo");
+        printf("Erro na alocação");
     }
     return inicio;
 }
@@ -116,8 +116,27 @@ void removeFinal(lista* inicio){
     
 }
 
-void ordenaLista(lista* inicio){
-    
+void ordenarLista(lista *inicio) {
+    if ((*inicio) == NULL) {
+        printf("Não há nada para ordenar...");
+        return;
+    }
+
+    int troca;
+    do {
+        troca = 0;
+        node *atual = (*inicio);
+
+        while (atual->prox != NULL) {
+            if (atual->num > atual->prox->num) {
+                int temp = atual->num;
+                atual->num = atual->prox->num;
+                atual->prox->num = temp;
+                troca = 1;
+            }
+            atual = atual->prox;
+        }
+    } while (troca);
 }
 
 int main(){
