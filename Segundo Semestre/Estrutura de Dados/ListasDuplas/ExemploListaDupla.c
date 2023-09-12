@@ -3,6 +3,7 @@
 
 struct Node{
     int num;
+    struct Node *ant;
     struct Node *prox;
 };
 typedef struct Node node;
@@ -139,30 +140,6 @@ void ordenarLista(lista *inicio) {
     } while (troca);
 }
 
-void removeElemento(lista *inicio){
-    if ((*inicio) == NULL) {
-        printf("Não há nada para remover...");
-        return;
-    }
-
-    int n, verificacao;
-    node *temp;
-    temp = (*inicio);
-    printf("Digite qual valor deseja remover da lista: ");
-    scanf("%i", &n);
-
-    do{
-        verificacao = 0;
-        if(temp->num == n){
-            free(temp);
-            verificacao = 1;
-        }
-        temp = temp->prox;
-
-    }while(verificacao);
-
-}
-
 int main(){
     lista* inicio = criarlistta();
     int op = 0, cont = 0;
@@ -175,8 +152,6 @@ int main(){
     printf("5 - Ordenar lista\n");
     printf("6 - Remover inicio\n");
     printf("7 - Remover final\n");
-    printf("8 - Remover elemento\n");
-
     printf("0 - Sair\n");
     scanf("%i", &op);
     switch (op){
@@ -211,11 +186,6 @@ int main(){
 
     case 7:
         removeFinal(inicio);
-        cont = 1;
-        break;
-
-    case 8:
-        removeElemento(inicio);
         cont = 1;
         break;
 
