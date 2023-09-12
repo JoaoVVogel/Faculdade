@@ -139,29 +139,58 @@ void ordenarLista(lista *inicio) {
     } while (troca);
 }
 
-void removeElemento(lista *inicio){
+void removeElemento(lista *inicio) {
     if ((*inicio) == NULL) {
         printf("Não há nada para remover...");
         return;
     }
 
-    int n, verificacao;
-    node *temp;
+    int n;
+    node *temp, *antTemp = NULL;
     temp = (*inicio);
     printf("Digite qual valor deseja remover da lista: ");
     scanf("%i", &n);
 
-    do{
-        verificacao = 0;
-        if(temp->num == n){
+    while (temp != NULL) {
+        if (temp->num == n) {
+            if (antTemp == NULL) {
+                *inicio = temp->prox;
+            } else {
+                antTemp->prox = temp->prox;
+            }
             free(temp);
-            verificacao = 1;
+            printf("Elemento removido\n");
+            return;
         }
+        antTemp = temp;
         temp = temp->prox;
-
-    }while(verificacao);
-
+    }
+    printf("Elemento não encontrado na lista\n");
 }
+
+int inserirOrdenado(lista *inicio) {
+    node *novo = (node *)malloc(sizeof(node));
+    if (novo == NULL) {
+        printf("Erro na alocação");
+        return 0;
+    } else {
+        printf("Digite o valor: ");
+        scanf("%i", &novo->num);
+
+        if (*inicio == NULL || novo->num <= (*inicio)->num) {
+            novo->prox = *inicio;
+            *inicio = novo;
+        } else {
+            node *temp = *inicio;
+            while (temp->prox != NULL && temp->prox->num < novo->num) {
+                temp = temp->prox;
+            }
+            novo->prox = temp->prox;
+            temp->prox = novo;
+        }
+    }
+}
+
 
 int main(){
     lista* inicio = criarlistta();
@@ -219,6 +248,11 @@ int main(){
         cont = 1;
         break;
 
+    case 9:
+        inserirOrdenado(inicio);
+        cont = 1;
+        break;
+    
     case 0:
         return 0;
         cont = 0;
