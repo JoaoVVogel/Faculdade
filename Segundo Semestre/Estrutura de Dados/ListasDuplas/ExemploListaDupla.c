@@ -20,7 +20,7 @@ lista* criarlistta(){
     return inicio;
 }
 
-int inserenoinicio(lista *inicio){
+int insereNoInicio(lista *inicio){
     node *novo = (node*) malloc(sizeof(node));
     if(novo == NULL){
         printf("Erro na alocação");
@@ -156,7 +156,7 @@ int main(){
     scanf("%i", &op);
     switch (op){
     case 1:
-        inserenoinicio(inicio);
+        insereNoInicio(inicio);
         cont = 1;
         break;
     
