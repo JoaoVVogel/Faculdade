@@ -64,3 +64,24 @@ int insere_ArvBin(ArvBin* raiz){
         }
     }
 }
+
+void libera_NO(no *no_liberar){
+    if(no_liberar == NULL){
+        return;
+    }else{
+        libera_NO(no_liberar->esq);
+        libera_NO(no_liberar->dir);
+        free(no_liberar);
+    
+    }
+}
+int libera_ArvBin(ArvBin* raiz){
+    if(raiz == NULL){
+        return 0;
+
+    }else{
+        libera_NO(*raiz);
+
+    }
+    free(raiz);
+}
